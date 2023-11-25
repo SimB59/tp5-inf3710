@@ -1,0 +1,17 @@
+.entry-container {
+    width: auto;
+    border: solid;
+    display: flex;
+    flex-direction: row;
+    margin: auto;    
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: large;
+    font-weight: bolder;
+}

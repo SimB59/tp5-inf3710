@@ -1,0 +1,10 @@
+<div class="entry-container">
+    <div class="text-container">
+        <span class="title">{{doctor.prenom + " " + doctor.nom}}</span> 
+        <span>Spécialité : {{doctor.specialite}}</span> 
+        <span>Années expérience : {{doctor.anneesexperience}}</span> 
+    </div> 
+    <button routerLink="/modify" [queryParams]="{id: doctorId, fname: doctor.prenom, lname: doctor.nom, speciality: doctor.specialite, years: doctor.anneesexperience, idService: doctor.idservice }">Modifier</button>
+    <button (click)="this.service.deleteDoctor(doctor.idmedecin, doctorId)">Delete</button>
+</div>
+

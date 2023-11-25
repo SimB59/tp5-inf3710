@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { DisplayServiceService } from '../services/display-service.service';
 
 @Component({
   selector: 'app-display-page',
   templateUrl: './display-page.component.html',
   styleUrls: ['./display-page.component.css']
 })
-export class DisplayPageComponent implements OnInit {
+export class DisplayPageComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor(public displayService: DisplayServiceService) { }
 }

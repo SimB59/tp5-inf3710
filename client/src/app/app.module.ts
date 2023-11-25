@@ -10,12 +10,16 @@ import { AppMaterialModule } from './modules/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DisplayPageComponent } from './display-page/display-page.component';
 import { AddPageComponent } from './add-page/add-page.component';
+import { DisplayEntryComponent } from './display-entry/display-entry.component';
+import { ModifyDoctorComponent } from './modify-doctor/modify-doctor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayPageComponent,
-    AddPageComponent
+    AddPageComponent,
+    DisplayEntryComponent,
+    ModifyDoctorComponent
   ],
   imports: [
     CommonModule,

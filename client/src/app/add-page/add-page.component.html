@@ -1,26 +1,35 @@
-<div class="middle">
+<div class="center-container">
     <form [formGroup]="addForm">
-        <mat-form-field>
-            <mat-label>Catégorie</mat-label>
-            <input matInput type="text" id="categorie" formControlName="categorie" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Fréquence par semaine</mat-label>
-            <input matInput type="number" id="frequence" formControlName="frequence" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Nombre de Personnes</mat-label>
-            <input matInput type="number" min="0" value="1000" id="nbrpersonnes" formControlName="nbrpersonnes"   />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Nombre de Calories</mat-label>
-            <input matInput type="number" min="0" id="nbrcalories" formControlName="nbrcalories" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Prix</mat-label>
-            <input matInput type="number"  min="0" id="prix" formControlName="prix" />
-        </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label for="field1">Prénom : </mat-label>
+        <input matInput id="field1" formControlName="firstName" required (keyup.enter)="onSubmit()" placeholder="Prénom">
+        <mat-error>Le prénom est recquis</mat-error>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label for="field2">Nom : </mat-label>
+        <input matInput id="field2" formControlName="name" required (keyup.enter)="onSubmit()" placeholder="Nom">
+        <mat-error>Le nom est recquis</mat-error>
+      </mat-form-field>
 
+      <mat-form-field>
+        <mat-label>Spécialité :</mat-label>
+        <mat-select formControlName="specialityValue">
+            <mat-option *ngFor="let option of this.service.getServiceList()" [value]="option.nomservice">
+              {{ option.nomservice }}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>  
+      
+      <mat-form-field appearance="outline">
+        <mat-label for="field4">Nombre d'années : </mat-label>
+        <input matInput id="field4" type="number" formControlName="years" required (keyup.enter)="onSubmit()" placeholder="Années">
+        <mat-error>Le nb d'année est recquis</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" routerLink="/display" type="submit" [disabled]="addForm.invalid" (click)="onSubmit()">
+        Ajouter un médecin
+      </button>
     </form>
-    
-</div>
+  </div>
+  

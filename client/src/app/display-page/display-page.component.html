@@ -1,1 +1,1 @@
-<p>display-page works!</p>
+<app-display-entry *ngFor="let doctor of this.displayService.getDoctorList()" [doctor]="doctor" [doctorId]="this.displayService.getDoctorList().indexOf(doctor)"></app-display-entry>
