@@ -23,7 +23,7 @@ let DatabaseService = class DatabaseService {
     constructor() {
         this.connectionConfig = {
             user: "postgres",
-            database: "TP4",
+            database: "TP5",
             password: "root",
             port: 5432,
             host: "localhost",

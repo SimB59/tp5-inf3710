@@ -1,10 +1,10 @@
 <div class="entry-container">
-    <div class="text-container">
-        <span class="title">{{doctor.prenom + " " + doctor.nom}}</span> 
-        <span>Spécialité : {{doctor.specialite}}</span> 
-        <span>Années expérience : {{doctor.anneesexperience}}</span> 
-    </div> 
-    <button routerLink="/modify" [queryParams]="{id: doctorId, fname: doctor.prenom, lname: doctor.nom, speciality: doctor.specialite, years: doctor.anneesexperience, idService: doctor.idservice }">Modifier</button>
-    <button (click)="this.service.deleteDoctor(doctor.idmedecin, doctorId)">Delete</button>
+    <span class="id"> ID : {{doctor.idmedecin}}</span>
+    <span class="name">{{doctor.prenom + " " + doctor.nom}}</span>
+    <span class="specialite">Spécialité : {{doctor.specialite}}</span>
+    <span class="exp">Années expérience : {{doctor.anneesexperience}}</span>
+    <div class="buttons">
+        <button class="modify" (click)="this.openModificationDialog()"> <mat-icon>edit</mat-icon> </button>
+        <button class="delete" (click)="this.openDeleteDialog()"> <mat-icon>delete</mat-icon> </button>
+    </div>
 </div>
-

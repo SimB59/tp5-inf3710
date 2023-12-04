@@ -11,7 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DisplayPageComponent } from './display-page/display-page.component';
 import { AddPageComponent } from './add-page/add-page.component';
 import { DisplayEntryComponent } from './display-entry/display-entry.component';
-import { ModifyDoctorComponent } from './modify-doctor/modify-doctor.component';
+import { DeleteComponentComponent } from './delete-component/delete-component.component';
+import { ModificationComponentComponent } from './modification-component/modification-component.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ModifyDoctorComponent } from './modify-doctor/modify-doctor.component';
     DisplayPageComponent,
     AddPageComponent,
     DisplayEntryComponent,
-    ModifyDoctorComponent
+    DeleteComponentComponent,
+    ModificationComponentComponent
   ],
   imports: [
     CommonModule,

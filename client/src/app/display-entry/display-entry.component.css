@@ -1,4 +1,4 @@
-.entry-container {
+/* .entry-container {
     width: auto;
     border: solid;
     display: flex;
@@ -14,4 +14,49 @@
 .title {
     font-size: large;
     font-weight: bolder;
+} */
+
+.entry-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #9a75f0;
+    border-radius: 10px;
+}
+
+.entry-container:hover {
+    background-color: #c7b6ff;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+span, button {
+    flex-grow: 2;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.id {
+    flex-grow: 1;
+    /* width: 32px; */
+    border-right: 1px solid currentColor;
+    /* padding-right: 24px; */
+    text-align: center;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.delete:hover {
+    color: red; /* Change to the color you want */
+}
+
+.modify:hover {
+    color: green; /* Change to the color you want */
 }

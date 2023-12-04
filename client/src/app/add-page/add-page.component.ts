@@ -15,16 +15,16 @@ export class AddPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.addForm = new FormGroup({
-      firstName: new FormControl("", [Validators.required]),
-      name: new FormControl("", [Validators.required]),
+      firstName: new FormControl("", [Validators.required, Validators.minLength(1), Validators.maxLength(50), Validators.pattern('[a-zA-Z ]*')]),
+      name: new FormControl("", [Validators.required, Validators.minLength(1), Validators.maxLength(50), Validators.pattern('[a-zA-Z ]*')]),
       specialityValue: new FormControl("", [Validators.required]),
-      years: new FormControl([Validators.required]),
+      years: new FormControl("", [Validators.required, Validators.pattern('[0-9]*'), Validators.min(0), Validators.max(100)]),
     });
   }
 
   onSubmit() {
     this.service.addDoctor( {
-      idmedecin: 1,
+      idmedecin: 1, // To be changed
       prenom : this.addForm.value.firstName, 
       nom : this.addForm.value.name, 
       specialite : this.addForm.value.specialityValue, 

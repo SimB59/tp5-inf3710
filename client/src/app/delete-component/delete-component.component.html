@@ -1,0 +1,6 @@
+<div mat-dialog-title class="title">Supprimer un médecin</div>
+<div mat-dialog-content>Êtes-vous certain de vouloir supprimer <b>{{ data.doctor.prenom }} {{ data.doctor.nom }}</b> (ID:{{ data.doctor.idmedecin }})?</div>
+<mat-dialog-actions class="center">
+    <button mat-button mat-dialog-close>Retour</button>
+    <button mat-button mat-dialog-close (click)="this.service.deleteDoctor(data.doctor.idmedecin, data.index)">Supprimer</button>
+</mat-dialog-actions>

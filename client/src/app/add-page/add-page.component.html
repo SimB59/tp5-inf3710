@@ -1,20 +1,21 @@
-<div class="center-container">
+<div mat-dialog-title class="title">Ajouter un médecin</div>
+<div mat-dialog-content>
     <form [formGroup]="addForm">
-      <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline">
         <mat-label for="field1">Prénom : </mat-label>
-        <input matInput id="field1" formControlName="firstName" required (keyup.enter)="onSubmit()" placeholder="Prénom">
-        <mat-error>Le prénom est recquis</mat-error>
+        <input matInput id="field1" formControlName="firstName" required placeholder="Prénom">
+        <mat-error>Le prénom est requis</mat-error>
       </mat-form-field>
       
       <mat-form-field appearance="outline">
         <mat-label for="field2">Nom : </mat-label>
-        <input matInput id="field2" formControlName="name" required (keyup.enter)="onSubmit()" placeholder="Nom">
-        <mat-error>Le nom est recquis</mat-error>
+        <input matInput id="field2" formControlName="name" required placeholder="Nom">
+        <mat-error>Le nom est requis</mat-error>
       </mat-form-field>
-
+    
       <mat-form-field>
         <mat-label>Spécialité :</mat-label>
-        <mat-select formControlName="specialityValue">
+        <mat-select formControlName="specialityValue" required>
             <mat-option *ngFor="let option of this.service.getServiceList()" [value]="option.nomservice">
               {{ option.nomservice }}
             </mat-option>
@@ -23,13 +24,12 @@
       
       <mat-form-field appearance="outline">
         <mat-label for="field4">Nombre d'années : </mat-label>
-        <input matInput id="field4" type="number" formControlName="years" required (keyup.enter)="onSubmit()" placeholder="Années">
-        <mat-error>Le nb d'année est recquis</mat-error>
+        <input matInput id="field4" type="number" formControlName="years" required placeholder="Années">
+        <mat-error>Le nombre d'années doit être entre 0 et 100</mat-error>
       </mat-form-field>
-
-      <button mat-raised-button color="primary" routerLink="/display" type="submit" [disabled]="addForm.invalid" (click)="onSubmit()">
-        Ajouter un médecin
-      </button>
     </form>
-  </div>
-  
+</div>
+<mat-dialog-actions class="center">
+    <button mat-button mat-dialog-close>Retour</button>
+    <button mat-button mat-dialog-close (click)="this.onSubmit()" [disabled]="!addForm.valid">Ajouter</button>
+</mat-dialog-actions>

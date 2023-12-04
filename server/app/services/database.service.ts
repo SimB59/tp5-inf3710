@@ -10,7 +10,7 @@ type values = [number, string, string, string, number, number];
 export class DatabaseService {
   public connectionConfig: pg.ConnectionConfig = {
     user: "postgres",
-    database: "TP4",
+    database: "TP5",
     password: "root",
     port: 5432,          // Attention ! Peut aussi être 5433 pour certains utilisateurs
     host: "localhost",

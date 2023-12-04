@@ -29,18 +29,17 @@ export class DisplayServiceService {
     });
   }
 
-  public deleteDoctor(index: number, listIndex:number) {
+  public deleteDoctor(index: number = 0, listIndex:number) {
     this.comService.deleteMedecin(index.toString()).subscribe();
     this.doctorList.splice(listIndex, 1);
   }
 
-  public modifyDoctor(data: Medecins) {
+  public modifyDoctor(data: Medecins, index: number) {
     this.comService.updateMedecins(data).subscribe();
-    this.doctorList[data.idmedecin] = data;
+    this.doctorList[index] = data;
   }
 
   public addDoctor(data: Medecins) {
     this.comService.addMedecin(data).subscribe();
-    this.doctorList.push(data);
   }
 }

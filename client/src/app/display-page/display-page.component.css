@@ -1,0 +1,24 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin: 0 10%; /* This gives 10% space on left and right */
+    padding: 10px;
+    width: 80%; /* This sets the width to 80% of the screen */
+    border-radius: 10px; /* This makes the corners rounded */
+    align-items: center; /* This centers the content vertically */
+    justify-content: center; /* This centers the content horizontally */
+    background-color: black;
+}
+
+.entries-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
