@@ -37,3 +37,8 @@
   font-size: 18px;
   padding: 1%;
 }
+
+.add:hover {
+  cursor: pointer;
+  background: rgba(154, 117, 240, 0.4);
+}
